@@ -1,6 +1,6 @@
 import React from "react";
 import './CharacterCard.scss'
-import { Card, Image } from 'semantic-ui-react'
+import { Card, Image, Button } from 'semantic-ui-react'
 
 export default function CharacterCard(props) {
   return (
@@ -12,7 +12,8 @@ export default function CharacterCard(props) {
             <div>{props.location}</div>
             <div>{props.origin}</div>
         </Card.Content>
-        <h4>{props.episode}</h4>
+        <Button floated='right'
+        onClick={props.episode}>{`Episodes ${props.episode}`}</Button>
     </Card>
   )
 }
