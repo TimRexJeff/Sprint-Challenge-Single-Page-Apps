@@ -29,5 +29,3 @@ export default function CharacterList() {
     </section>
   );
 }
-
-console.log(CharacterList)
