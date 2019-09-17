@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import { Tab, Menu, Icon } from "semantic-ui-react";
+import { Menu } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
-import WelcomePage from './WelcomePage'
-import CharacterList from './CharacterList'
-import LocationsList from './LocationsList'
-import EpisodeList from './EpisodeList'
 
 // TODO: Add missing menu/tabs/nav below
 
@@ -22,27 +18,35 @@ export default function TabNav() {
     }
     
     return (
-    <Menu attached='top' tabular>
-        <Menu.Item
-        name='home'
-        active={tabs === 'home'}
-        onClick={handleItemClick}
-        />
-        <Menu.Item
-        name='characters'
-        active={tabs === 'characters'}
-        onClick={handleItemClick}
-        />
-        <Menu.Item
-        name='locations'
-        active={tabs === 'locations'}
-        onClick={handleItemClick}
-        />
-        <Menu.Item
-        name='episodes'
-        active={tabs === 'episodes'}
-        onClick={handleItemClick}
-        />
+    <Menu tabular>
+        <NavLink exact to='/'>
+            <Menu.Item
+            name='home'
+            active={tabs === 'home'}
+            onClick={handleItemClick}
+            />
+        </NavLink>
+        <NavLink to='/characters'>
+            <Menu.Item
+            name='characters'
+            active={tabs === 'characters'}
+            onClick={handleItemClick}
+            />
+        </NavLink>
+        <NavLink to='/locations'>
+            <Menu.Item
+            name='locations'
+            active={tabs === 'locations'}
+            onClick={handleItemClick}
+            />
+        </NavLink>
+        <NavLink to='/episodes'>
+            <Menu.Item
+            name='episodes'
+            active={tabs === 'episodes'}
+            onClick={handleItemClick}
+            />
+        </NavLink>
     </Menu>
     )
 }

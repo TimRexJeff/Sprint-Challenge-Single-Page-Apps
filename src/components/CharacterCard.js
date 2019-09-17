@@ -7,13 +7,13 @@ export default function CharacterCard(props) {
     <Card className="char-card">
         <Image src={props.image}/>
         <h2>{props.name}</h2>
-        <h3>{props.species}{props.status}</h3>
+        <h3>{`${props.species} ${props.status}`}</h3>
         <Card.Content>
-            <div>{props.location}</div>
-            <div>{props.origin}</div>
+            <div>{`Location: ${props.location}`}</div>
+            <div>{`Origin: ${props.origin}`}</div>
         </Card.Content>
         <Button floated='right'
-        onClick={props.episode}>{`Episodes ${props.episode}`}</Button>
+        onClick={props.episode}>{`${props.episode.length} Episodes`}</Button>
     </Card>
   )
 }

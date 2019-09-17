@@ -1,13 +1,13 @@
 import React from "react";
 import { Card, Button } from 'semantic-ui-react'
 
-export default function LocationCard({ name, type, dimension, residents }) {
+export default function LocationCard(props) {
   return (
     <Card className="loc-card">
-      <h2>{name.name}</h2>
-      <h3>{`${type.type} - ${dimension.dimension}`}</h3>
+      <h2>{props.name}</h2>
+      <h3>{`${props.type} - ${props.dimension}`}</h3>
       <Button floated='right'
-        onClick={residents.residents}>{`Residents ${residents.residents}`}</Button>
+        onClick={props.residents}>{`${props.residents} Residents`}</Button>
     </Card>
   )
 }
