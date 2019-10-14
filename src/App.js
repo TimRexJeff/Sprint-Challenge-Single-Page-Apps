@@ -15,7 +15,7 @@ export default function App() {
       <Route exact path='/' component={WelcomePage} />
       <Route path='/characters' component={CharacterList} />
       <Route path='/locations' component={LocationList} />
-      <Route path='/episode' component={EpisodeList} />
+      <Route path='/episodes' component={EpisodeList} />
     </main>
   );
 }
