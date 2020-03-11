@@ -1,5 +1,5 @@
-import React from "react";
-import { Tab, Menu, Icon } from "semantic-ui-react";
+import React, { useState } from "react";
+import { Menu } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 
 // TODO: Add missing menu/tabs/nav below
@@ -11,5 +11,42 @@ import { NavLink } from "react-router-dom";
 // https://react.semantic-ui.com/collections/breadcrumb/
 
 export default function TabNav() {
+    const [tabs, setTabs] = useState()
 
-};
+   const handleItemClick = (e, { name }) => {
+        setTabs({ tabs: name })
+    }
+    
+    return (
+    <Menu tabular>
+        <NavLink exact to='/'>
+            <Menu.Item
+            name='home'
+            active={tabs === 'home'}
+            onClick={handleItemClick}
+            />
+        </NavLink>
+        <NavLink to='/characters'>
+            <Menu.Item
+            name='characters'
+            active={tabs === 'characters'}
+            onClick={handleItemClick}
+            />
+        </NavLink>
+        <NavLink to='/locations'>
+            <Menu.Item
+            name='locations'
+            active={tabs === 'locations'}
+            onClick={handleItemClick}
+            />
+        </NavLink>
+        <NavLink to='/episodes'>
+            <Menu.Item
+            name='episodes'
+            active={tabs === 'episodes'}
+            onClick={handleItemClick}
+            />
+        </NavLink>
+    </Menu>
+    )
+}
